@@ -1,7 +1,25 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.Reader
+import java.io.StringReader
+import java.util.IllegalFormatCodePointException
+import java.util.TreeMap
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
 }
+
+fun readNumber(reader: BufferedReader) {
+    val number = try {
+        Integer.parseInt(reader.readLine())
+    } catch (e: NumberFormatException) {
+        return
+    } finally {
+        println("exit")
+    }
+}
+
+fun isLetter(c: Char) = c in 'a'..'z' || c in 'A' .. 'Z'
+fun isNumber(num: Int) = num in 1..100
+fun isNotDigit(c: Char) = c !in '0' .. '9'
+
+data class Test(val name: String, val age: Int)
