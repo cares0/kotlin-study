@@ -431,6 +431,20 @@ fun main(args: Array<String>) {
 - Kotlin은 Map타입의 요소에 접근할 때 map[key], map[key] = value를 통해 put과 get을 대신할 수 있음
 - in에 Map타입을 지정할 경우 for문 변수로 key, value를 선언할 수 있음
 
+### List의 인덱스와 함께 사용
+
+```kotlin
+fun withIndex() {
+  val list = arrayListOf("A", "B", "C")
+
+  for ((index, element) in list.withIndex()) {
+      println("${index} = ${element}")
+  }
+}
+
+```
+- `withIndex()` 함수를 통해 리스트의 인덱스를 for문에서 사용 가능
+
 ### in으로 컬렉션이나 범위의 원소 검사
 ```kotlin
 fun isLetter(c: Char) = c in 'a'..'z' || c in 'A' .. 'Z'

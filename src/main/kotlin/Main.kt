@@ -6,6 +6,8 @@ import java.util.IllegalFormatCodePointException
 import java.util.TreeMap
 
 fun main(args: Array<String>) {
+
+    withIndex()
 }
 
 fun readNumber(reader: BufferedReader) {
@@ -15,6 +17,15 @@ fun readNumber(reader: BufferedReader) {
         return
     } finally {
         println("exit")
+    }
+
+}
+
+fun withIndex() {
+    val list = arrayListOf("A", "B", "C")
+
+    for ((index, element) in list.withIndex()) {
+        println("$index = $element")
     }
 }
 
